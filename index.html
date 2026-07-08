@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LumenDeck — A Creative Operating System for AI Visual Production</title>
+  <meta name="description" content="LumenDeck is a local-first AI creation studio. Prompts, models, characters, renders, and campaigns unified into one creative command center — with a Constellation System that remembers how your creative universe is built." />
+  <meta name="theme-color" content="#0a0a12" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LumenDeck — Local-first AI Creation Studio" />
+  <meta property="og:description" content="Not a prompt-to-image toy. A creative operating system with project-memory: every prompt, render, character, and campaign mapped as an interactive star map." />
+  <meta property="og:site_name" content="LumenDeck" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='8' fill='%237c5cff'/><circle cx='22' cy='30' r='3' fill='%2300e0c6'/><circle cx='78' cy='34' r='3' fill='%2300e0c6'/><circle cx='30' cy='74' r='3' fill='%23ff6ec7'/><circle cx='74' cy='72' r='3' fill='%23ff6ec7'/><g stroke='%237c5cff' stroke-width='1.2' opacity='0.6'><line x1='50' y1='50' x2='22' y2='30'/><line x1='50' y1='50' x2='78' y2='34'/><line x1='50' y1='50' x2='30' y2='74'/><line x1='50' y1='50' x2='74' y2='72'/></g></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="constellation" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">LumenDeck</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#constellation-system">Constellation</a>
+      <a href="#local-first">Local-first</a>
+      <a href="#who">Who it's for</a>
+      <a class="nav-cta" href="https://github.com/xhan145/lumendeck" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow">Local-first AI creation studio</p>
+      <h1>Your creative universe,<br /><span class="grad">remembered.</span></h1>
+      <p class="lede">
+        LumenDeck isn't a prompt-to-image toy. It's a creative operating system that unifies
+        prompts, models, characters, renders, and campaigns — and maps every one as an
+        interactive star map that remembers how your work was built.
+      </p>
+
+      <form id="waitlist-form" class="waitlist" novalidate>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          inputmode="email"
+          autocomplete="email"
+          placeholder="you@studio.com"
+          aria-label="Email address"
+          required
+        />
+        <button id="waitlist-submit" type="submit">Join the waitlist</button>
+      </form>
+      <p id="waitlist-msg" class="waitlist-msg" role="status" aria-live="polite"></p>
+      <p class="counter"><span id="signup-count">—</span> creators have joined</p>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="band">
+      <h2>Every generation, lost in folders and downloads.</h2>
+      <p class="band-lede">
+        Most tools treat each render as an isolated output. You type a prompt, get an image,
+        download it — and lose the context of how it was made. Which prompt? Which model?
+        Which campaign? The trail disappears the moment you hit save.
+      </p>
+    </section>
+
+    <!-- CONSTELLATION -->
+    <section id="constellation-system" class="feature">
+      <div class="feature-text">
+        <p class="eyebrow">The Constellation System</p>
+        <h2>Not a file browser. A creative observatory.</h2>
+        <p>
+          Every prompt, render, model, style, reference, character, caption, and export
+          becomes a node. Every relationship becomes a visible connection. A character sits
+          at the center like an anchor star — outfits, poses, scenes, videos, and posts
+          orbiting around it.
+        </p>
+        <ul class="checks">
+          <li>See where an idea started and how it evolved</li>
+          <li>Know which model produced the best version of a character</li>
+          <li>Spot which looks are drifting from the original identity</li>
+          <li>Surface unused renders that deserve another look</li>
+        </ul>
+      </div>
+      <div class="feature-visual" aria-hidden="true">
+        <div class="orbit-scene">
+          <span class="anchor-star"></span>
+          <span class="orbit orbit-1"><span class="node"></span></span>
+          <span class="orbit orbit-2"><span class="node"></span></span>
+          <span class="orbit orbit-3"><span class="node"></span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCAL FIRST -->
+    <section id="local-first" class="band alt">
+      <p class="eyebrow">Local-first independence</p>
+      <h2>More privacy. More ownership. Less lock-in.</h2>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Private by default</h3>
+          <p>Your prompts, models, and assets stay on your machine. No cloud tool holding your creative universe hostage.</p>
+        </div>
+        <div class="pillar">
+          <h3>You own the output</h3>
+          <p>Full control over how images, videos, characters, and campaigns are generated, refined, and deployed.</p>
+        </div>
+        <div class="pillar">
+          <h3>Built to scale with you</h3>
+          <p>Models, styles, workflows, automation, and asset libraries in one interface — powerful without becoming chaotic.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO -->
+    <section id="who" class="feature reverse">
+      <div class="feature-text">
+        <p class="eyebrow">Who it's for</p>
+        <h2>For anyone building a large creative universe.</h2>
+        <p>
+          Artists, developers, AI creators, fictional-persona builders, social media producers,
+          brand designers, and music-visual creators — anyone with many moving parts and a
+          need to keep them connected.
+        </p>
+        <div class="tags">
+          <span>Artists</span><span>Developers</span><span>Persona builders</span>
+          <span>Social producers</span><span>Brand designers</span><span>Music visuals</span>
+        </div>
+      </div>
+      <div class="feature-visual" aria-hidden="true">
+        <div class="galaxy-grid">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta">
+      <h2>Build a universe. Remember how.</h2>
+      <p>Get early access to LumenDeck and be first when the deck opens.</p>
+      <form id="waitlist-form-2" class="waitlist" novalidate>
+        <input
+          id="email-2"
+          type="email"
+          name="email"
+          inputmode="email"
+          autocomplete="email"
+          placeholder="you@studio.com"
+          aria-label="Email address"
+          required
+        />
+        <button type="submit">Join the waitlist</button>
+      </form>
+      <p id="waitlist-msg-2" class="waitlist-msg" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> LumenDeck</span>
+    <span class="dot">·</span>
+    <a href="https://github.com/xhan145/lumendeck" target="_blank" rel="noopener">Source on GitHub</a>
+    <span class="dot">·</span>
+    <span>Local-first AI creation</span>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
