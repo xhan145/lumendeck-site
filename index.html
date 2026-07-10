@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LumenDeck — A Creative Operating System for AI Visual Production</title>
-  <meta name="description" content="LumenDeck is a local-first AI creation studio. Prompts, models, characters, renders, and campaigns unified into one creative command center — with a Constellation System that remembers how your creative universe is built." />
+  <meta name="description" content="LumenDeck is an open-source, local-first AI creation studio. Prompts, models, characters, renders, video, and campaigns unified into one creative command center — with a Constellation System that remembers how your creative universe is built." />
   <meta name="theme-color" content="#0a0a12" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="LumenDeck — Local-first AI Creation Studio" />
-  <meta property="og:description" content="Not a prompt-to-image toy. A creative operating system with project-memory: every prompt, render, character, and campaign mapped as an interactive star map." />
+  <meta property="og:description" content="Open-source and local-first. A creative operating system with project-memory: every prompt, render, character, video, and campaign mapped as an interactive star map." />
   <meta property="og:site_name" content="LumenDeck" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='8' fill='%237c5cff'/><circle cx='22' cy='30' r='3' fill='%2300e0c6'/><circle cx='78' cy='34' r='3' fill='%2300e0c6'/><circle cx='30' cy='74' r='3' fill='%23ff6ec7'/><circle cx='74' cy='72' r='3' fill='%23ff6ec7'/><g stroke='%237c5cff' stroke-width='1.2' opacity='0.6'><line x1='50' y1='50' x2='22' y2='30'/><line x1='50' y1='50' x2='78' y2='34'/><line x1='50' y1='50' x2='30' y2='74'/><line x1='50' y1='50' x2='74' y2='72'/></g></svg>" />
@@ -18,50 +18,128 @@
 </head>
 <body>
   <canvas id="constellation" aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true"></div>
 
   <header class="nav">
     <a class="brand" href="#top">
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-name">LumenDeck</span>
+      <span class="brand-ver">v0.28.0</span>
     </a>
     <nav class="nav-links">
+      <a href="#features">Features</a>
       <a href="#constellation-system">Constellation</a>
+      <a href="#intelligence">Intelligence</a>
       <a href="#local-first">Local-first</a>
-      <a href="#who">Who it's for</a>
-      <a class="nav-cta" href="https://github.com/xhan145/lumendeck" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="nav-cta" href="https://github.com/xhan145/lumendeck" target="_blank" rel="noopener">
+        <svg class="gh" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
     </nav>
   </header>
 
   <main id="top">
     <!-- HERO -->
     <section class="hero">
-      <p class="eyebrow">Local-first AI creation studio</p>
-      <h1>Your creative universe,<br /><span class="grad">remembered.</span></h1>
-      <p class="lede">
-        LumenDeck isn't a prompt-to-image toy. It's a creative operating system that unifies
-        prompts, models, characters, renders, and campaigns — and maps every one as an
-        interactive star map that remembers how your work was built.
-      </p>
+      <div class="hero-copy reveal">
+        <p class="pill"><span class="pulse"></span> Open-source · Local-first · v0.28.0</p>
+        <h1>Your creative universe,<br /><span class="grad">remembered.</span></h1>
+        <p class="lede">
+          LumenDeck isn't a prompt-to-image toy. It's a local-first creative operating system
+          that unifies prompts, models, characters, renders, video, and campaigns — and maps
+          every one as an interactive star map that remembers how your work was built.
+        </p>
 
-      <form id="waitlist-form" class="waitlist" novalidate>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          inputmode="email"
-          autocomplete="email"
-          placeholder="you@studio.com"
-          aria-label="Email address"
-          required
-        />
-        <button id="waitlist-submit" type="submit">Join the waitlist</button>
-      </form>
-      <p id="waitlist-msg" class="waitlist-msg" role="status" aria-live="polite"></p>
-      <p class="counter"><span id="signup-count">—</span> creators have joined</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://github.com/xhan145/lumendeck" target="_blank" rel="noopener">
+            <svg class="gh" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            Explore on GitHub
+          </a>
+          <a class="btn btn-ghost" href="#features">See what's inside ↓</a>
+        </div>
+
+        <form id="waitlist-form" class="waitlist" novalidate>
+          <input id="email" type="email" name="email" inputmode="email" autocomplete="email"
+            placeholder="you@studio.com — get release updates" aria-label="Email address" required />
+          <button id="waitlist-submit" type="submit">Notify me</button>
+        </form>
+        <p id="waitlist-msg" class="waitlist-msg" role="status" aria-live="polite"></p>
+        <p class="counter"><span id="signup-count">—</span> creators following updates</p>
+      </div>
+
+      <!-- HERO VISUAL: orbiting constellation -->
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="orbit-scene big">
+          <span class="anchor-star"></span>
+          <span class="orbit orbit-1"><span class="node n-teal"></span></span>
+          <span class="orbit orbit-2"><span class="node n-pink"></span><span class="node n-teal2"></span></span>
+          <span class="orbit orbit-3"><span class="node n-gold"></span></span>
+          <span class="orbit orbit-4"><span class="node n-violet"></span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE GRID -->
+    <section id="features" class="features">
+      <div class="section-head reveal">
+        <p class="eyebrow">What's inside</p>
+        <h2>One studio for the whole creative pipeline.</h2>
+        <p class="section-sub">From first prompt to final export — generation, memory, intelligence, motion, and sharing in a single local-first app.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal">
+          <div class="ico ico-constellation" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="32" cy="32" r="6" fill="currentColor" stroke="none"/><circle cx="12" cy="16" r="3"/><circle cx="54" cy="20" r="3"/><circle cx="16" cy="50" r="3"/><circle cx="50" cy="50" r="3"/><path d="M32 32 12 16M32 32l22-12M32 32 16 50M32 32l18 18" opacity=".55"/></g></svg>
+          </div>
+          <h3>Constellation System</h3>
+          <p>Every prompt, render, model, character, and export becomes a node on an interactive star map. Project-memory instead of scattered folders.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="ico ico-brain" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M24 14a8 8 0 00-8 8 7 7 0 00-2 12 7 7 0 007 12 7 7 0 003 0V14z"/><path d="M40 14a8 8 0 018 8 7 7 0 012 12 7 7 0 01-7 12 7 7 0 01-3 0V14z"/><path d="M32 14v34" stroke-dasharray="3 3"/></g></svg>
+          </div>
+          <h3>Creative Intelligence <span class="tag-new">new</span></h3>
+          <p>Craft insights surface which tokens and settings actually lift your results. The Prompt Lab tracks prompt lineage — timelines and side-by-side compare.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="ico ico-graph" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="24" width="16" height="12" rx="2"/><rect x="40" y="12" width="16" height="12" rx="2"/><rect x="40" y="40" width="16" height="12" rx="2"/><path d="M24 30h8v-12h8M24 30h8v18h8" opacity=".6"/><circle cx="32" cy="30" r="2.5" fill="currentColor" stroke="none"/></g></svg>
+          </div>
+          <h3>Node graph + Recipe view</h3>
+          <p>Two synchronized editors on one workflow. Guided cards or an editable SVG node graph with typed-port wiring and live graph-health checks.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="ico ico-video" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="18" width="34" height="28" rx="4"/><path d="M42 28l14-8v24l-14-8z" fill="currentColor" fill-opacity=".15"/><path d="M20 26l10 6-10 6z" fill="currentColor" stroke="none"/></g></svg>
+          </div>
+          <h3>Video Export Suite <span class="tag-new">new</span></h3>
+          <p>Render motion and export to WebM/VP9 or a frame sequence. Audio-reactive visuals and timeline motion baked in.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="ico ico-share" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="32" r="6"/><circle cx="46" cy="16" r="6"/><circle cx="46" cy="48" r="6"/><path d="M24 29l16-9M24 35l16 9" opacity=".6"/></g></svg>
+          </div>
+          <h3>Shareable Showcase <span class="tag-new">new</span></h3>
+          <p>Publish a self-contained HTML showcase, or push it to a hosted public share-link — send your work anywhere without a cloud account.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="ico ico-grid" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="10" y="10" width="18" height="18" rx="3"/><rect x="36" y="10" width="18" height="18" rx="3"/><rect x="10" y="36" width="18" height="18" rx="3"/><rect x="36" y="36" width="18" height="18" rx="3" fill="currentColor" fill-opacity=".15"/></g></svg>
+          </div>
+          <h3>Studio Overview <span class="tag-new">new</span></h3>
+          <p>A cross-project portfolio dashboard — every constellation, render, and campaign at a glance, so nothing gets lost between projects.</p>
+        </article>
+      </div>
     </section>
 
     <!-- PROBLEM -->
-    <section class="band">
+    <section class="band reveal">
       <h2>Every generation, lost in folders and downloads.</h2>
       <p class="band-lede">
         Most tools treat each render as an isolated output. You type a prompt, get an image,
@@ -72,14 +150,14 @@
 
     <!-- CONSTELLATION -->
     <section id="constellation-system" class="feature">
-      <div class="feature-text">
+      <div class="feature-text reveal">
         <p class="eyebrow">The Constellation System</p>
         <h2>Not a file browser. A creative observatory.</h2>
         <p>
           Every prompt, render, model, style, reference, character, caption, and export
           becomes a node. Every relationship becomes a visible connection. A character sits
           at the center like an anchor star — outfits, poses, scenes, videos, and posts
-          orbiting around it.
+          orbiting around it, now rendered in a fluid volumetric 3D graph.
         </p>
         <ul class="checks">
           <li>See where an idea started and how it evolved</li>
@@ -88,39 +166,66 @@
           <li>Surface unused renders that deserve another look</li>
         </ul>
       </div>
-      <div class="feature-visual" aria-hidden="true">
+      <div class="feature-visual reveal" aria-hidden="true">
         <div class="orbit-scene">
           <span class="anchor-star"></span>
-          <span class="orbit orbit-1"><span class="node"></span></span>
-          <span class="orbit orbit-2"><span class="node"></span></span>
-          <span class="orbit orbit-3"><span class="node"></span></span>
+          <span class="orbit orbit-1"><span class="node n-teal"></span></span>
+          <span class="orbit orbit-2"><span class="node n-pink"></span></span>
+          <span class="orbit orbit-3"><span class="node n-gold"></span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATIVE INTELLIGENCE (new) -->
+    <section id="intelligence" class="feature reverse">
+      <div class="feature-text reveal">
+        <p class="eyebrow">Creative Intelligence · v0.26–0.28</p>
+        <h2>Your studio learns what actually works.</h2>
+        <p>
+          LumenDeck reads your own render history and tells you which tokens, settings, and
+          models genuinely lift a result — no guesswork. The Prompt Lab traces how a prompt
+          evolved across versions and lets you compare any two side by side.
+        </p>
+        <div class="tags">
+          <span>Token lift analysis</span><span>Prompt lineage timelines</span>
+          <span>Side-by-side compare</span><span>Setting suggestions</span>
+        </div>
+      </div>
+      <div class="feature-visual reveal" aria-hidden="true">
+        <div class="lineage" role="img" aria-label="Prompt lineage timeline">
+          <span class="ln-node"></span><span class="ln-wire"></span>
+          <span class="ln-node"></span><span class="ln-wire"></span>
+          <span class="ln-node big"></span><span class="ln-wire"></span>
+          <span class="ln-node"></span>
         </div>
       </div>
     </section>
 
     <!-- LOCAL FIRST -->
     <section id="local-first" class="band alt">
-      <p class="eyebrow">Local-first independence</p>
-      <h2>More privacy. More ownership. Less lock-in.</h2>
+      <div class="section-head reveal">
+        <p class="eyebrow">Local-first independence</p>
+        <h2>More privacy. More ownership. Less lock-in.</h2>
+      </div>
       <div class="pillars">
-        <div class="pillar">
+        <div class="pillar reveal">
           <h3>Private by default</h3>
           <p>Your prompts, models, and assets stay on your machine. No cloud tool holding your creative universe hostage.</p>
         </div>
-        <div class="pillar">
+        <div class="pillar reveal">
           <h3>You own the output</h3>
           <p>Full control over how images, videos, characters, and campaigns are generated, refined, and deployed.</p>
         </div>
-        <div class="pillar">
-          <h3>Built to scale with you</h3>
-          <p>Models, styles, workflows, automation, and asset libraries in one interface — powerful without becoming chaotic.</p>
+        <div class="pillar reveal">
+          <h3>Open source</h3>
+          <p>Auditable, extensible, and yours to fork. Ships as a Windows installer with an auto-updater — read every line on GitHub.</p>
         </div>
       </div>
     </section>
 
     <!-- WHO -->
-    <section id="who" class="feature reverse">
-      <div class="feature-text">
+    <section id="who" class="feature">
+      <div class="feature-text reveal">
         <p class="eyebrow">Who it's for</p>
         <h2>For anyone building a large creative universe.</h2>
         <p>
@@ -133,7 +238,7 @@
           <span>Social producers</span><span>Brand designers</span><span>Music visuals</span>
         </div>
       </div>
-      <div class="feature-visual" aria-hidden="true">
+      <div class="feature-visual reveal" aria-hidden="true">
         <div class="galaxy-grid">
           <span></span><span></span><span></span><span></span>
           <span></span><span></span><span></span><span></span>
@@ -143,21 +248,19 @@
     </section>
 
     <!-- FINAL CTA -->
-    <section class="cta">
+    <section class="cta reveal">
       <h2>Build a universe. Remember how.</h2>
-      <p>Get early access to LumenDeck and be first when the deck opens.</p>
+      <p>LumenDeck is open source and local-first. Grab it on GitHub, or leave your email for release news.</p>
+      <div class="hero-cta center">
+        <a class="btn btn-primary" href="https://github.com/xhan145/lumendeck" target="_blank" rel="noopener">
+          <svg class="gh" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Get LumenDeck on GitHub
+        </a>
+      </div>
       <form id="waitlist-form-2" class="waitlist" novalidate>
-        <input
-          id="email-2"
-          type="email"
-          name="email"
-          inputmode="email"
-          autocomplete="email"
-          placeholder="you@studio.com"
-          aria-label="Email address"
-          required
-        />
-        <button type="submit">Join the waitlist</button>
+        <input id="email-2" type="email" name="email" inputmode="email" autocomplete="email"
+          placeholder="you@studio.com" aria-label="Email address" required />
+        <button type="submit">Notify me</button>
       </form>
       <p id="waitlist-msg-2" class="waitlist-msg" role="status" aria-live="polite"></p>
     </section>
@@ -166,9 +269,9 @@
   <footer class="footer">
     <span>© <span id="year"></span> LumenDeck</span>
     <span class="dot">·</span>
-    <a href="https://github.com/xhan145/lumendeck" target="_blank" rel="noopener">Source on GitHub</a>
+    <a href="https://github.com/xhan145/lumendeck" target="_blank" rel="noopener">Source on GitHub ↗</a>
     <span class="dot">·</span>
-    <span>Local-first AI creation</span>
+    <span>Open-source · Local-first AI creation</span>
   </footer>
 
   <script type="module" src="app.js"></script>

@@ -1,8 +1,24 @@
 # LumenDeck — Marketing Site
 
-A simple, fast, single-page landing site advertising **[LumenDeck](https://github.com/xhan145/lumendeck)** — the local-first AI creation studio with the Constellation System.
+A fast, single-page landing site advertising **[LumenDeck](https://github.com/xhan145/lumendeck)** — the open-source, local-first AI creation studio with the Constellation System (currently **v0.28.0**).
 
 Static HTML/CSS/JS (no build step) + a Supabase-backed email waitlist, deployed on Vercel from GitHub.
+
+## What the page covers
+
+Hero with the GitHub repo as the primary CTA, plus a "What's inside" feature grid highlighting
+current capabilities: **Constellation System**, **Creative Intelligence** (Craft insights + Prompt
+Lab lineage), **Node graph + Recipe view**, **Video Export Suite** (WebM/VP9), **Shareable
+Showcase** + hosted share-links, and the **Studio Overview** dashboard. Followed by the
+constellation deep-dive, a Creative Intelligence section, local-first pillars, who-it's-for, and a
+final GitHub CTA.
+
+### Graphics & animation
+
+Animated constellation `<canvas>` starfield, drifting aurora glow, orbiting hero scene with pointer
+parallax, animated SVG feature-card icons, and scroll-reveal on every section. Scroll-reveal is
+**fail-safe**: the hidden state is gated behind a JS-added `.reveal-on` class, in-view elements
+reveal immediately, and a catch-all timer guarantees content never stays hidden.
 
 ## Stack
 

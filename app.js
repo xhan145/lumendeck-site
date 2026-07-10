@@ -76,6 +76,70 @@ wireForm("waitlist-form", "email", "waitlist-msg");
 wireForm("waitlist-form-2", "email-2", "waitlist-msg-2");
 refreshCount();
 
+/* ---------- Scroll reveal (fail-safe: content is never left hidden) ---------- */
+(function scrollReveal() {
+  const els = Array.from(document.querySelectorAll(".reveal"));
+  // Opt in to the hidden-until-revealed state only now that JS is running.
+  // If this script never loads, `.reveal-on` is absent and everything stays visible.
+  document.documentElement.classList.add("reveal-on");
+  if (!els.length) return;
+
+  const revealAll = () => els.forEach((el) => el.classList.add("in"));
+
+  // Reveal anything already on screen immediately (no wait for the observer).
+  const revealInView = () => {
+    const h = window.innerHeight || 800;
+    els.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < h * 0.95 && r.bottom > 0) el.classList.add("in");
+    });
+  };
+  revealInView();
+
+  if (!("IntersectionObserver" in window)) {
+    revealAll();
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+  );
+  els.forEach((el) => { if (!el.classList.contains("in")) io.observe(el); });
+
+  // Reveal on scroll as a belt-and-suspenders backup to the observer.
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { revealInView(); ticking = false; });
+  }, { passive: true });
+
+  // Last-resort safety net: if nothing else fired, show everything.
+  setTimeout(revealAll, 2500);
+})();
+
+/* ---------- Hero parallax (pointer) ---------- */
+(function heroParallax() {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const scene = document.querySelector(".hero-visual .orbit-scene");
+  if (!scene || reduce) return;
+  window.addEventListener("pointermove", (e) => {
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
+    const dx = (e.clientX - cx) / cx;
+    const dy = (e.clientY - cy) / cy;
+    scene.style.transform = `translate3d(${dx * 14}px, ${dy * 14}px, 0)`;
+  });
+})();
+
 /* ---------- Constellation background ---------- */
 (function constellation() {
   const canvas = document.getElementById("constellation");
