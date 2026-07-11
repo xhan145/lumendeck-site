@@ -203,6 +203,9 @@ h1, h2, h3 { line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 0.5em; }
 .ico-video { color: var(--gold); }
 .ico-share { color: var(--teal); }
 .ico-grid { color: var(--violet); }
+.ico-node3d { color: var(--pink); }
+.ico-glass { color: var(--teal); }
+.ico-cloud { color: var(--gold); }
 .card:hover .ico { animation: nudge 0.6s ease; }
 @keyframes nudge { 50% { transform: translateY(-4px) rotate(-4deg); } }
 

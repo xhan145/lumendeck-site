@@ -1,17 +1,22 @@
 # LumenDeck — Marketing Site
 
-A fast, single-page landing site advertising **[LumenDeck](https://github.com/xhan145/lumendeck)** — the open-source, local-first AI creation studio with the Constellation System (currently **v0.28.0**).
+A fast, single-page landing site advertising **[LumenDeck](https://github.com/xhan145/lumendeck)** — the open-source, local-first (cloud-optional) AI creation studio with the Constellation System (currently **v0.33.0**).
 
 Static HTML/CSS/JS (no build step) + a Supabase-backed email waitlist, deployed on Vercel from GitHub.
 
 ## What the page covers
 
-Hero with the GitHub repo as the primary CTA, plus a "What's inside" feature grid highlighting
-current capabilities: **Constellation System**, **Creative Intelligence** (Craft insights + Prompt
-Lab lineage), **Node graph + Recipe view**, **Video Export Suite** (WebM/VP9), **Shareable
-Showcase** + hosted share-links, and the **Studio Overview** dashboard. Followed by the
-constellation deep-dive, a Creative Intelligence section, local-first pillars, who-it's-for, and a
-final GitHub CTA.
+Hero with the GitHub repo as the primary CTA, plus a nine-card "What's inside" feature grid:
+**Constellation System**, **Creative Intelligence** (Craft insights + Prompt Lab lineage), **Node
+graph + Recipe view**, **Video Export Suite** (WebM/VP9), **Shareable Showcase** + hosted
+share-links, **Studio Overview** dashboard, and the newest work — **3D Node Control** (position as a
+control surface in the volumetric constellation), **Glass Cinema UI** (glassmorphism shell + splash),
+and **optional Cloud providers** (OpenAI, Stability, Fal, Replicate, Runway; opt-in, keys stored by
+the local bridge). Followed by the constellation deep-dive, a Creative Intelligence section,
+local-first pillars, who-it's-for, and a final GitHub CTA.
+
+Keep the version badge and the "new"-badged cards in sync with the app's `main` — only advertise
+features merged to `main` (check `git show origin/main:package.json`), not feature branches.
 
 ### Graphics & animation
 
