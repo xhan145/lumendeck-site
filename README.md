@@ -1,6 +1,6 @@
 # LumenDeck — Marketing Site
 
-A fast, single-page landing site advertising **[LumenDeck](https://github.com/xhan145/lumendeck)** — the open-source, local-first (cloud-optional) AI creation studio with the Constellation System (currently **v0.33.0**).
+A fast, single-page landing site advertising **[LumenDeck](https://github.com/xhan145/lumendeck)** — the open-source, local-first (cloud-optional) AI creation studio with the Constellation System (currently **v0.34.0**).
 
 Static HTML/CSS/JS (no build step) + a Supabase-backed email waitlist, deployed on Vercel from GitHub.
 

@@ -95,6 +95,9 @@ h1, h2, h3 { line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 0.5em; }
 .btn-primary:hover { filter: brightness(1.08); transform: translateY(-2px); }
 .btn-ghost { color: var(--ink); border: 1px solid var(--line); background: var(--card); }
 .btn-ghost:hover { border-color: var(--violet); transform: translateY(-2px); }
+.btn-sub { font-weight: 500; font-size: 0.82rem; opacity: 0.75; margin-left: 2px; }
+.dl-note { font-size: 0.85rem; color: var(--muted); margin: -14px 0 24px; }
+.dl-note a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- HERO ---------- */
 .hero {
